@@ -121,6 +121,42 @@ Which tool, on Kali, combined with ChatGPT's suggestions, could enhance subdomai
 
 <img width="570" height="200" alt="image" src="https://github.com/user-attachments/assets/c5f01e6b-1a01-4a32-bc1f-e21b04ba415f" />
 
+1) Start Walk Through Exercises in VM Group 1, use Nmap to conduct a SYN stealth scan of your target IP range, and save the output to a file. Use grep to show machines that are online. Which host has port 25 open? Use 50 as the third IP octet instead of your dynamically assigned IP when submitting the answer.
+
+<img width="620" height="769" alt="image" src="https://github.com/user-attachments/assets/eb31651b-9570-4131-807a-021204be171a" />
+
+<img width="333" height="137" alt="image" src="https://github.com/user-attachments/assets/0b92307e-8834-46ee-8353-ac710662e220" />
+
+2) Perform an Nmap TCP scan against the addresses on the Walk Through Exercises on VM Group 1. Which host is running a WHOIS server? Use 50 as the third IP octet instead of your dynamically assigned IP when submitting the answer.
+
+<img width="642" height="293" alt="image" src="https://github.com/user-attachments/assets/f9bbad9e-bc08-4262-833b-f6c567ed9700" />
+
+<img width="357" height="136" alt="image" src="https://github.com/user-attachments/assets/1289fd97-216c-4fb5-bf44-37f213980da8" />
+
+
+3) Connect via RDP to the Windows 11 client from Walk Through Exercises VM Group 1 and perform TCP port discovery against the Windows DC machine ending with the octet '151' (ex: 192.168.51.151). Which are the first four open TCP ports? List the ports separated by commas.
+
+<img width="615" height="439" alt="image" src="https://github.com/user-attachments/assets/bf5d6b9e-94b7-44ba-b2a7-eff88783cd9c" />
+
+<img width="586" height="347" alt="image" src="https://github.com/user-attachments/assets/c5737c0c-b24d-48e0-b572-a73655d6d6af" />
+
+4) There is a service running on a high-range TCP port on Information Gathering - Port Scanning - Module Exercises - VM #1. Find it, and you will find the flag together with it.
+  
+<img width="563" height="282" alt="image" src="https://github.com/user-attachments/assets/7281de7a-0b9b-4d7e-9f6c-83ed2bb906c8" />
+
+5) The NMAP Scripting Engine includes a many extremely useful scripts to assist in the active recon process for a wide variety of things, not just the handful of services discussed in this Module. In the NMAP library, for example, there are over 100 NSE discovery scripts. For this challenge, you will need to use a new discovery script to help you enumerate the HTTP title of the default page of all the hosts with web servers on the public lab network. Performing something as simple as scanning the web server titles can help you collect all sorts of information about the target, including the purpose of the website, software version information, and even login pages. In this challenge, you need to find the host with a web server with the title "Under Construction" in the Module Exercises VM Group 1. The flag is located on the index.html page of the web server matching this title.
+
+<img width="560" height="280" alt="image" src="https://github.com/user-attachments/assets/35d66029-f798-474e-a684-22b803fbcba3" />
+
+<img width="659" height="806" alt="image" src="https://github.com/user-attachments/assets/d0f989ed-440b-4e1b-8cee-8e636bce2464" />
+
+<img width="1275" height="199" alt="image" src="https://github.com/user-attachments/assets/d9163f56-6f15-4d5a-a5b1-2a4b15d67e20" />
+
+
+
+
+
+
 
 
 
