@@ -150,18 +150,52 @@ Which tool, on Kali, combined with ChatGPT's suggestions, could enhance subdomai
 
 <img width="1275" height="199" alt="image" src="https://github.com/user-attachments/assets/d9163f56-6f15-4d5a-a5b1-2a4b15d67e20" />
 
+#### SMB enumeration
+- The security track record of the Server Message Block (SMB) protocol has been poor for many years due to its complex implementation and open nature. From unauthenticated SMB null sessions in Windows 2000 and XP, to a plethora of SMB bugs and vulnerabilities over the years, SMB has had its fair share of issues. Keeping this in mind, the SMB protocol has also been updated and improved in parallel with Windows releases. The NetBIOS service listens on TCP port 139, as well as several UDP ports. It should be noted that SMB (TCP port 445) and NetBIOS are two separate protocols. NetBIOS is an independent session layer protocol and service that allows computers on a local network to communicate with each other. While modern implementations of SMB can work without NetBIOS, NetBIOS over TCP (NBT) is required for backward compatibility and these are often enabled together. This also means the enumeration of these two services often goes together
 
+1) Power on the Walk Through VM Group 1 and use Nmap to create a list of the SMB servers in the VM Group 1. How many hosts have port 445 open?
 
+<img width="697" height="820" alt="image" src="https://github.com/user-attachments/assets/1fe98228-f01e-44ca-a502-9cc3a94dbe2d" />
 
+2) On the same group, connect to the Windows 11 client and repeat the shares enumeration against dc01 via the net view command. What are the three reported admin shares? List them separated by commas, without spaces in between.
 
+<img width="1892" height="561" alt="image" src="https://github.com/user-attachments/assets/6c5a0f73-9bc4-4c96-87fe-7bfa11b88ebe" />
 
+<img width="674" height="452" alt="image" src="https://github.com/user-attachments/assets/c31d6513-a55f-43c0-90ea-dfa6ce24551d" />
 
+3) Server message block (SMB) is an extremely important service that can be used to determine a wealth of information about a server, including its users. Start up Topic Exercise VM Group 1 and use Nmap to identify the lab machines listening on the SMB port and then use enum4linux to enumerate those machines. In doing so, you will find a machine with the local user alfred. The flag is located in the comments on one of the SMB shares of the host that has the alfred user.
 
+<img width="584" height="473" alt="image" src="https://github.com/user-attachments/assets/d437d1bb-593a-4575-88b9-6e5502085314" />
 
+<img width="1051" height="454" alt="image" src="https://github.com/user-attachments/assets/314ff533-af00-4c99-85bd-e8a172a2f143" />
 
+#### SMTP Enumeration
+We can also gather information about a host or network from vulnerable mail servers. The Simple Mail Transport Protocol (SMTP) supports several interesting commands, such as VRFY and EXPN. A VRFY request asks the server to verify an email address, while EXPN asks the server for the membership of a mailing list. These can often be abused to verify existing users on a mail server, which is useful information during a penetration test.
 
+1) Power on the Walk Through Exercises VM Group 1 and search your target network range to identify any systems that respond to SMTP. Once found, open a connection to port 25 via Netcat and run VRFY command against the root user. What response code does the SMTP server send as a response?
 
+<img width="625" height="291" alt="image" src="https://github.com/user-attachments/assets/65ec2339-604c-4d11-a60c-78a8c6653426" />
 
+#### SNMP Enumeration
+Over the years, we have often found that the Simple Network Management Protocol (SNMP) is not well-understood by many network administrators. This often results in SNMP misconfigurations, which can result in significant information leaks. SNMP is based on UDP, a simple, stateless protocol, and is therefore susceptible to IP spoofing and replay attacks. Additionally, the commonly used SNMP protocols 1, 2, and 2c offer no traffic encryption, meaning that SNMP information and credentials can be easily intercepted over a local network. Traditional SNMP protocols also have weak authentication schemes and are commonly left configured with default public and private community strings.
 
+1) Scan your target network on VM Group 1 with onesixtyone to identify any SNMP servers. Once done, list all the running process on the only Windows host that is running an SNMP server. What is the full name of the SNMP server process?
+
+<img width="1240" height="83" alt="image" src="https://github.com/user-attachments/assets/ef2f736f-312e-412b-b64b-73a0fb7de00c" />
+
+<img width="667" height="184" alt="image" src="https://github.com/user-attachments/assets/e12c0d29-b89b-40ee-9c5d-953ee51161a8" />
+<img width="340" height="240" alt="image" src="https://github.com/user-attachments/assets/2941969d-76a0-442d-9679-0206bdc8a694" />
+
+2) On the same Windows host, run one of the SNMP query we have already explored in this section. This time appending the -Oa parameter to the command. This parameter will automatically translate any hexadecimal string into ASCII that was otherwise not decoded. What is the first Interface name listed in the output?
+
+<img width="964" height="452" alt="image" src="https://github.com/user-attachments/assets/5417c92c-3777-4082-8507-eb84fa36f41f" />
+
+### LLM-powered active information gathering
+Earlier we discussed how LLMs can help us with Passive Information Gathering. In this Learning Unit, we'll explore how LLMs can improve our approach with active enumeration, enabling us to uncover critical insights about a target's domain infrastructure with greater efficiency and precision.  DNS enumeration is a fundamental technique in reconnaissance, allowing us to query DNS servers and extract information such as subdomains, mail servers, and name servers. By integrating LLMs into this process, we can take DNS enumeration to the next level. LLMs can analyze query results, identify naming patterns, and correlate data across multiple sources, revealing misconfigurations or hidden assets. For instance, we can use LLMs to streamline the analysis of DNS zone transfers, reverse lookups, and WHOIS data, synthesizing findings into actionable intelligence faster than manual methods allow.
+
+#### Active LLM-aided enumeration
+As we learned in the previous section about DNS enumeration, one of our first steps is to create a robust wordlist. In this section, we'll learn how to use LLMs to create effective wordlists for DNS enumeration. Building a strong wordlist is crucial to uncovering subdomains, services, or directories associated with a target domain. Traditionally, this process required us to manually sift through public information, but modern LLMs can streamline and enhance this step, helping us uncover patterns and generate better results.
+
+<img width="622" height="443" alt="image" src="https://github.com/user-attachments/assets/e052466f-01ec-4165-b330-bf596e0e693b" />
 
 
