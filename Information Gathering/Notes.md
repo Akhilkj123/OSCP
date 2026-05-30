@@ -146,8 +146,6 @@ Which tool, on Kali, combined with ChatGPT's suggestions, could enhance subdomai
 
 5) The NMAP Scripting Engine includes a many extremely useful scripts to assist in the active recon process for a wide variety of things, not just the handful of services discussed in this Module. In the NMAP library, for example, there are over 100 NSE discovery scripts. For this challenge, you will need to use a new discovery script to help you enumerate the HTTP title of the default page of all the hosts with web servers on the public lab network. Performing something as simple as scanning the web server titles can help you collect all sorts of information about the target, including the purpose of the website, software version information, and even login pages. In this challenge, you need to find the host with a web server with the title "Under Construction" in the Module Exercises VM Group 1. The flag is located on the index.html page of the web server matching this title.
 
-<img width="560" height="280" alt="image" src="https://github.com/user-attachments/assets/35d66029-f798-474e-a684-22b803fbcba3" />
-
 <img width="659" height="806" alt="image" src="https://github.com/user-attachments/assets/d0f989ed-440b-4e1b-8cee-8e636bce2464" />
 
 <img width="1275" height="199" alt="image" src="https://github.com/user-attachments/assets/d9163f56-6f15-4d5a-a5b1-2a4b15d67e20" />
