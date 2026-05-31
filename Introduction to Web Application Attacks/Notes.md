@@ -58,3 +58,7 @@ Once found the admin portal, log-in with the provided credentials to obtain the 
 <img width="1714" height="701" alt="image" src="https://github.com/user-attachments/assets/ab35a82f-4685-46fa-ab85-66a624c0a5b7" />
 
 <img width="1273" height="349" alt="image" src="https://github.com/user-attachments/assets/6bdfd695-ca50-48c1-a155-2cb45dbeba04" />
+
+####  Debugging Page Content
+- A good place to start our web application information mapping is with a URL address. File extensions, which are sometimes part of a URL, can reveal the programming language the application was written in. Some extensions, like .php, are straightforward, but others are more cryptic and vary based on the frameworks in use. For example, a Java-based web application might use .jsp, .do, or .html. File extensions on web pages are becoming less common, however, since many languages and frameworks now support the concept of routes, which allow developers to map a URI to a section of code. Applications leveraging routes use logic to determine what content is returned to the user, making URI extensions largely irrelevant.
+
