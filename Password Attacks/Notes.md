@@ -122,7 +122,21 @@ We can describe the process of cracking a hash with the following steps:
 <img width="683" height="134" alt="image" src="https://github.com/user-attachments/assets/7aa7551d-66ea-4b91-8d97-fabc1c868ddf" />
 
 #### Password manager
-- Password managers securely store passwords for multiple services, protected by a master password that safeguards all stored passwords. Users often copy and paste these passwords from the password manager or use an auto-fill function tied to a browser.
+- Password managers securely store passwords for multiple services, protected by a master password that safeguards all stored passwords. Users often copy and paste these passwords from the password manager or use an auto-fill function tied to a browser. Once connected, we'll check which programs are installed on the system. There are many ways to search for installed programs, but since we have GUI access, we'll use the Apps & features function of Windows, which is the most straight-forward approach. We'll click on the Windows icon, type "Apps", select Add or remove programs and scroll down to review all installed programs.
+
+<img width="705" height="414" alt="image" src="https://github.com/user-attachments/assets/79d7f667-0190-4cba-b0a1-8cc556682e82" />
+
+<img width="776" height="400" alt="image" src="https://github.com/user-attachments/assets/ccf11d14-9381-4d2e-9242-78f404fdafa9" />
+
+<img width="956" height="72" alt="image" src="https://github.com/user-attachments/assets/9738694c-db83-4513-b890-07215682dddf" />
+
+<img width="1881" height="196" alt="image" src="https://github.com/user-attachments/assets/ff99138e-1a17-4b14-9925-6f4a0bfab7dc" />
+
+
+
+
+
+
 
 
 
