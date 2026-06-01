@@ -51,3 +51,78 @@
 2) The web page on VM #2 is password protected. Use Hydra to perform a password attack and get access as user admin. Once you have identified the correct password, enter it as the answer to this exercise.
 
 <img width="1671" height="201" alt="image" src="https://github.com/user-attachments/assets/de9f3ce0-c3d3-4f77-88ec-b1cefec9fed9" />
+
+### Password cracking fundamentals
+- Understand the Fundamentals of Password Cracking
+- Mutate Wordlists
+- Explain the Basic Password Cracking Methodology
+- Attack Password Manager Key Files
+- Attack the Passphrase of Ssh Private Keys
+
+#### Introduction to encryption, hashes and cracking
+- In this section, we'll examine the differences between encryption and hash algorithms and discuss password cracking. Then we'll review two popular password cracking tools: Hashcat and John the Ripper (JtR). Finally, we'll calculate the time it takes to crack certain hashes.
+
+1) Answer with true or false: In symmetric encryption, one key is used for both the encryption and decryption process.
+- True
+
+2) Answer with true or false: In asymmetric encryption, we can share the private key freely over the network to another person without risking that a third party can capture our key and then decrypt messages which get sent to us.
+- False
+
+3) Answer with true or false: A cryptographic hash function is a one-way function. The resulting hash cannot be reversed by reversing the steps used to hash the plain text information.
+- True
+
+4) Use the MD5 GPU hash rate from the GPU benchmark of this section and calculate the cracking time in minutes with the following conditions. Use a charset of all lower and upper case letters of the English alphabet and use a password length of 8. Enter the answer as full minutes without seconds.
+
+<img width="331" height="167" alt="image" src="https://github.com/user-attachments/assets/2c15a660-df79-4c4d-901b-e5f7462f50ce" />
+
+<img width="415" height="85" alt="image" src="https://github.com/user-attachments/assets/4d4b66f5-cd48-4a0e-8a15-6f91a9c766ac" />
+<img width="525" height="158" alt="image" src="https://github.com/user-attachments/assets/f3c2680a-2a0c-4250-baae-e160981a8f90" />
+
+#### Mutating wordlists
+- Password policies often require a minimum password length as well as a combination of uppercase and lowercase letters, special characters, and numbers. Most passwords in the commonly-used wordlists will not fulfill these requirements. If we wanted to use these lists against a target with strong password policies, we would need to manually prepare the wordlist by removing all passwords that do not satisfy the password policy or by manually modifying the wordlist to include appropriate passwords. We can address this by automating the process of changing (or mutating) our wordlist before sending them to this target in what is known as a rule-based attack.
+
+<img width="427" height="266" alt="image" src="https://github.com/user-attachments/assets/37e1edc4-297c-4c2e-9861-974f8a031d21" />
+
+<img width="542" height="443" alt="image" src="https://github.com/user-attachments/assets/06113e66-c031-4e51-bf38-f1a22f3fbba8" />
+
+- In order to demonstrate rule functions such as capitalization, let's copy the 10 passwords from Listing 12 and save them to demo.txt in the newly-created passwordattacks directory. Then, we'll remove all number sequences (which don't fit the password policy) from demo.txt by using sed with ^1 referring to all lines starting with a "1", deleting them with d, and doing the editing in place with -i.
+
+<img width="457" height="238" alt="image" src="https://github.com/user-attachments/assets/9f6d8938-7f09-479d-9eaf-f48073ca2471" />
+
+- Now, we can use hashcat with our wordlist mutation, providing the rule file with -r, and --stdout, which starts Hashcat in debugging mode. In this mode, Hashcat will not attempt to crack any hashes, but merely display the mutated passwords.
+
+<img width="448" height="385" alt="image" src="https://github.com/user-attachments/assets/fdabd4dd-4c47-4a1b-867e-86b083ab7807" />
+
+1) You extracted the MD5 hash "056df33e47082c77148dba529212d50a" from a target system. Create a rule to add "1@3$5" to each password of the rockyou.txt wordlist and crack the hash.
+
+<img width="458" height="203" alt="image" src="https://github.com/user-attachments/assets/2ad6bd39-b93a-4343-bbd8-880674357fe9" />
+
+<img width="1356" height="857" alt="image" src="https://github.com/user-attachments/assets/e38e127e-9663-4929-b8f5-bd34525be956" />
+
+2) You extracted the MD5 hash "19adc0e8921336d08502c039dc297ff8" from a target system. Create a rule which makes all letters upper case and duplicates the passwords contained in rockyou.txt and crack the hash.
+
+<img width="400" height="65" alt="image" src="https://github.com/user-attachments/assets/a64c450b-ac98-4031-a2ac-6345f181b87d" />
+
+<img width="1364" height="852" alt="image" src="https://github.com/user-attachments/assets/91ff2bf9-15ad-402c-94cf-e85dfd39b11e" />
+
+#### Cracking methodology
+We can describe the process of cracking a hash with the following steps:
+- Extract hashes
+- Format hashes
+- Calculate the cracking time
+- Prepare wordlist
+- Attack the hash
+
+1) Identify the hash function of the following hash: "a41e0fdfb57173f8156f58e49628968a8ba782d0cd251c6f3e2426cb36ced3b647bf83057d"
+
+<img width="996" height="138" alt="image" src="https://github.com/user-attachments/assets/15b49eee-9c5f-4f28-b731-4ad9008820b7" />
+
+2) Identify the hash function of the following hash "$2y$10$XrrpX8RD6IFvBwtzPuTlcOqJ8kO2px2xsh17f60GZsBKLeszsQTBC"
+
+<img width="683" height="134" alt="image" src="https://github.com/user-attachments/assets/7aa7551d-66ea-4b91-8d97-fabc1c868ddf" />
+
+
+
+
+
+
