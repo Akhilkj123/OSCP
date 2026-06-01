@@ -121,6 +121,9 @@ We can describe the process of cracking a hash with the following steps:
 
 <img width="683" height="134" alt="image" src="https://github.com/user-attachments/assets/7aa7551d-66ea-4b91-8d97-fabc1c868ddf" />
 
+#### Password manager
+- Password managers securely store passwords for multiple services, protected by a master password that safeguards all stored passwords. Users often copy and paste these passwords from the password manager or use an auto-fill function tied to a browser.
+
 
 
 
