@@ -133,9 +133,28 @@ We can describe the process of cracking a hash with the following steps:
 <img width="1881" height="196" alt="image" src="https://github.com/user-attachments/assets/ff99138e-1a17-4b14-9925-6f4a0bfab7dc" />
 
 
+#### SSH private key passphrase
+- Even though SSH private keys should be kept confidential, there are many scenarios in which these files could be compromised. For example, if we gain access to a web application via a vulnerability like Directory Traversal, we could read files on the system. We could use this to retrieve a user's SSH private key. However, when we try to use it to connect to the system, we would be prompted for a passphrase. To gain access, we'll need to crack the passphrase.
 
+Let's browse another web service, which (for this demonstration) is located at http://192.168.50.201:8080 and log in with a username of user and a password of 121212.
 
+<img width="1729" height="500" alt="image" src="https://github.com/user-attachments/assets/0b0426c6-766e-469b-b370-b1dbc56fb02a" />
 
+<img width="968" height="510" alt="image" src="https://github.com/user-attachments/assets/bb51e168-297a-4fe1-ba61-eb24272167d1" />
+
+<img width="738" height="198" alt="image" src="https://github.com/user-attachments/assets/8f4f4db6-204f-4fe7-bdcd-5ad21b98bfce" />
+
+<img width="219" height="98" alt="image" src="https://github.com/user-attachments/assets/f411a6cc-4d69-433e-962d-a1c20ba9fd5e" />
+
+<img width="1705" height="513" alt="image" src="https://github.com/user-attachments/assets/5af81db0-7ce6-4060-b996-7f6ba0b2afd1" />
+
+<img width="647" height="252" alt="image" src="https://github.com/user-attachments/assets/3c769253-11d8-4409-8a23-62985b6fec39" />
+
+1) Follow the steps outlined in this section to get access to VM #1 (BRUTE) on port 2222 with SSH by cracking the passphrase of the private key. Find the flag in the home directory of the user dave.
+
+<img width="507" height="276" alt="image" src="https://github.com/user-attachments/assets/c81c2096-33de-42bd-8f2f-25569fabf54e" />
+
+2) 
 
 
 
