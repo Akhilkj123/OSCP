@@ -137,6 +137,17 @@ Using your Kali VM try to clone the Zoom login page. What wget flag do we need t
 
 <img width="572" height="336" alt="image" src="https://github.com/user-attachments/assets/2f85ee57-3914-4cbb-a405-4d85ff5c73ba" />
 
+####  Capturing credentials
+- Let's create a simple Python credential server. This script will listen for POST requests, extract the email and password from the form data, print them to the terminal, and redirect the victim to the real Zoom login page so they assume the login simply failed.
+
+<img width="864" height="414" alt="image" src="https://github.com/user-attachments/assets/72a26d92-f569-4449-9920-a24f1ee5ecd6" />
+
+<img width="934" height="677" alt="image" src="https://github.com/user-attachments/assets/24e08b75-2c3e-417f-b696-3f507115ef33" />
+
+<img width="500" height="188" alt="image" src="https://github.com/user-attachments/assets/16f334b9-b20e-4207-8ba0-46144375d035" />
+
+
+
 - The page now looks identical to the original. The cookie banner appears at the bottom and can be dismissed by clicking Cookies Settings. When we enter an email address and click Next, the page transitions to the password entry step while keeping the header and sidebar image visible.
 
 <img width="930" height="790" alt="image" src="https://github.com/user-attachments/assets/e66dcb25-3d75-4f06-b1a4-127e6578ef81" />
