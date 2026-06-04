@@ -38,4 +38,14 @@
 - Behavior-Based Detection
 
 3) Start up VM #1 and connect via RDP to the Windows 11 machine with the provided credentials. On the user's desktop you will find a PE file named malware.exe. In order to get the flag, upload the malware sample to http://www.virustotal.com and once the analysis has completed check the metadata present in the BEHAVIOR tab.
-- 
+ 
+<img width="906" height="594" alt="image" src="https://github.com/user-attachments/assets/159e4b0f-c33e-4936-81ee-2a3e0191a90e" />
+
+<img width="907" height="578" alt="image" src="https://github.com/user-attachments/assets/883c0522-12cc-4b5b-87f8-988e66a724c9" />
+
+###  Bypassing antivirus detections
+- Understand On-disk Evasion Techniques
+- Understand In-memory Evasion Techniques
+
+#### On-disk evasion
+- Modern on-disk malware obfuscation can take many forms. One of the earliest ways of avoiding detection involved the use of packers. Given the high cost of disk space and slow network speeds during the early days of the internet, packers were originally designed to reduce the size of an executable. Unlike modern "zip" compression techniques, packers generate an executable that is not only smaller but is also functionally equivalent with a completely new binary structure. The file produced has a new hash signature and as a result, can effectively bypass older and more simplistic AV scanners. Even though some modern malware uses a variation of this technique, the use of UPX and other popular packers alone is not sufficient to evade modern AV scanners.
