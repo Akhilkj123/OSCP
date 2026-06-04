@@ -48,4 +48,36 @@
 - Understand In-memory Evasion Techniques
 
 #### On-disk evasion
-- Modern on-disk malware obfuscation can take many forms. One of the earliest ways of avoiding detection involved the use of packers. Given the high cost of disk space and slow network speeds during the early days of the internet, packers were originally designed to reduce the size of an executable. Unlike modern "zip" compression techniques, packers generate an executable that is not only smaller but is also functionally equivalent with a completely new binary structure. The file produced has a new hash signature and as a result, can effectively bypass older and more simplistic AV scanners. Even though some modern malware uses a variation of this technique, the use of UPX and other popular packers alone is not sufficient to evade modern AV scanners.
+- Instead of hiding malware only while it is running in memory, attackers may disguise the malicious files stored on a system's hard drive. These techniques are designed to make malware more difficult for antivirus (AV) software to identify before execution.
+- **Packers** - Packers compress or transform an executable file into a new executable with a different binary structure. When the packed program runs, it automatically unpacks itself and executes the original code. Because the packed file has a different structure and hash value, older signature-based antivirus products may fail to recognize it.
+- **Code Obfuscation** - Obfuscators modify a program's code while preserving its functionality. Techniques include replacing instructions with equivalent alternatives, inserting unnecessary instructions (dead code), splitting functions, or rearranging program logic. These modifications make reverse engineering more difficult and can reduce the effectiveness of signature-based malware detection.
+- **Crypters** - Crypters encrypt or otherwise transform executable code and add a small decryption component known as a stub. When the program is executed, the stub decrypts the original code directly in memory before running it. Since only the encrypted version exists on disk, antivirus software may have greater difficulty identifying the malware through static file analysis.
+- **Software Protectors** - Software protectors combine multiple defensive and obfuscation techniques to make analysis and detection more difficult. They often include encryption, packing, code virtualization, anti-debugging, anti-tampering, and anti-reverse-engineering features.
+- **Anti-Debugging** - The malware checks whether it is being examined by a debugger. If debugging tools are detected, the malware may terminate, hide its behavior, alter its execution, or provide misleading information to hinder analysis.
+- **Virtual Machine (VM) Detection** – The malware attempts to determine whether it is running inside a virtual machine or sandbox environment commonly used by security analysts. If such an environment is detected, the malware may avoid executing its malicious functions to prevent analysis and detection.
+- **Layered Evasion Techniques** - Modern malware often combines packing, obfuscation, encryption, anti-debugging, anti-reversing, and VM detection techniques.
+
+#### In-memory evasion
+- Instead of saving malware as a file on the hard drive, the attacker places and runs the malicious code directly in RAM. Since many security tools focus heavily on scanning files stored on disk, this can make detection more difficult. The code usually disappears when the system is rebooted unless another persistence method is used.
+- **Remote Process Memory Injection** - The attacker inserts malicious code into the memory space of another legitimate process, such as a trusted application. The malicious code then runs under the identity of that legitimate process. This can help the attacker blend in with normal system activity and avoid some security checks.
+- **Reflective DLL Injection** - Normally, a DLL must be loaded from a file stored on disk. In this technique, the DLL is loaded directly from memory using custom code rather than Windows' normal DLL-loading mechanism. As a result, no DLL file needs to be written to disk.
+- **Process Hollowing** - A legitimate program is started in a suspended state before it begins executing. The original program code is removed from memory and replaced with malicious code. When the process is resumed, it appears to be the legitimate program, but it is actually running the attacker's code.
+- **Inline Hooking** - The attacker modifies a function so that execution is temporarily redirected to malicious code. After the malicious code runs, execution returns to the original function as if nothing unusual happened. This allows the attacker to intercept, monitor, or alter program behavior.
+- **Rootkit** - A rootkit is a stealth-focused type of malware designed to hide itself and maintain long-term access to a system. It often modifies operating system components or uses hooking techniques to conceal files, processes, network connections, or other malicious activity. Because of its deep integration with the system, a rootkit can be very difficult to detect and remove.
+
+1) Which on-disk evasion technique makes use of code made by spurious instructions and that is not part of the main execution?
+- Packers
+
+2) When performing Remote Process Injection, which API is responsible for copying the shellcode into the target thread?
+- WriteProcessMemory
+
+3) Between packers and crypters, which one provides the highest level of stealth?
+- Crypters
+
+### AV evasion in practice
+- Understand Antivirus Evasion Testing Best Practices
+- Manually Evade AV Solutions
+- Leverage Automated Tools for AV Evasion
+
+#### Testing for AV evasion
+ - 
