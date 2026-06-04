@@ -80,4 +80,13 @@
 - Leverage Automated Tools for AV Evasion
 
 #### Testing for AV evasion
- - 
+ - SecOps is the teamwork between an organization's IT staff and security team to continuously protect computers and networks from cyber threats.
+- For penetration testers, it's important to understand how antivirus (AV) products work. If you upload your malware sample to VirusTotal, the sample is shared with many antivirus companies. They can analyze it    and quickly create signatures to detect it, making your tool ineffective.
+- A safer alternative is Kleenscan, which scans files with multiple AV engines but claims not to share the uploaded samples with antivirus vendors.
+- However, the best approach is to test your malware in a virtual machine (VM) that closely matches the target company's environment, especially if you know which antivirus product they use. This gives more        accurate results without exposing your tools to AV vendors.
+- Regardless of the tested AV product, we should always make sure to disable sample submission so that we don't incur the same drawback as VirusTotal. For instance, Windows Defender's Automatic Sample Submission can be disabled by navigating to Windows Security > Virus & threat protection > Manage Settings and deselecting the relative option as illustrated in the image below.
+
+<img width="935" height="462" alt="image" src="https://github.com/user-attachments/assets/6be4f8f0-e5e9-4a07-b4f3-61c9627fec62" />
+
+#### Evading AV with thread injection
+- 
