@@ -146,9 +146,21 @@ Using your Kali VM try to clone the Zoom login page. What wget flag do we need t
 
 <img width="500" height="188" alt="image" src="https://github.com/user-attachments/assets/16f334b9-b20e-4207-8ba0-46144375d035" />
 
-
-
 - The page now looks identical to the original. The cookie banner appears at the bottom and can be dismissed by clicking Cookies Settings. When we enter an email address and click Next, the page transitions to the password entry step while keeping the header and sidebar image visible.
 
 <img width="930" height="790" alt="image" src="https://github.com/user-attachments/assets/e66dcb25-3d75-4f06-b1a4-127e6578ef81" />
+
+What is the id attribute of the Next button on the cloned Zoom sign-in page?
+- signin_btn_next
+
+Browse to the Webmail application at http://192.168.X.77/mail/, using your IP for VM #1. Log in as helpdesk@mail.corp.com account and send the newly-crafted phishing email. Make sure that you add a hyperlink and make it point to your cloned Zoom website. After, login to the Webmail using the j.smith.sales@mail.corp.com username with the W00tw00t!! password and click the hyperlink. Input j.smith.sales@mail.corp.com as the email and a fake password and click the "Sign In" button. Ensure that the credentials are captured by the credential server. Which line in our cred_server.py is used to redirect the user to the legitimate Zoom page after we received the credentials? (paste the line as an answer)
+
+<img width="915" height="724" alt="image" src="https://github.com/user-attachments/assets/5bf11e6f-a11b-460b-b35a-ddba3ee01a3c" />
+
+<img width="909" height="627" alt="image" src="https://github.com/user-attachments/assets/928e9363-9127-4f5f-b8cf-3647e36f95b2" />
+
+<img width="919" height="307" alt="image" src="https://github.com/user-attachments/assets/91fb73c1-f21f-4ca7-a5fe-6f62b42b34fa" />
+
+- self.send_header('Location', 'https://zoom.us/signin')
+
 
