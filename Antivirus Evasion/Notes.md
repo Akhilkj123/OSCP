@@ -89,4 +89,12 @@
 <img width="935" height="462" alt="image" src="https://github.com/user-attachments/assets/6be4f8f0-e5e9-4a07-b4f3-61c9627fec62" />
 
 #### Evading AV with thread injection
-- 
+-  Once we connect via RDP with the provided credentials, we'll notice that Avira is already installed and can be launched from the Desktop shortcut. Once started, we can navigate to the Security panel from the left menu and click on Protection Options:
+
+<img width="851" height="570" alt="image" src="https://github.com/user-attachments/assets/c53e0b26-2a61-4e69-8681-89db37d19ec4" />
+
+<img width="1141" height="711" alt="image" src="https://github.com/user-attachments/assets/9f94313b-dde4-4ac2-b5e9-1e14d0fac83b" />
+
+- Use Shellter to inject a Meterpreter reverse shell payload in the Spotify executable, then transfer the binary to your Window 11 client VM #1 and ensure that it is not being detected by the antivirus. After, set up a Meterpreter listener, run the backdoored Spotify installer, and verify that you have obtained an interactive shell. As an additional exercise, attempt to find different executables and inject malicious code into them using Shellter. Which Shellter option is responsible for restoring the execution flow of the backdoored binary and therefore avoids any unwanted suspicion?
+
+
